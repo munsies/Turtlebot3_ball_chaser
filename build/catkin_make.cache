@@ -1,0 +1,2 @@
+my_turtlebot:turtlebot_ball_chaser
+-DCATKIN_DEVEL_PREFIX=/home/manan/catkin_ws3/devel -DCMAKE_INSTALL_PREFIX=/home/manan/catkin_ws3/install -G Unix Makefiles

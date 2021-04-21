@@ -1,0 +1,8 @@
+prefix=/home/manan/catkin_ws3/install
+
+Name: turtlebot_ball_chaser
+Description: Description of turtlebot_ball_chaser
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

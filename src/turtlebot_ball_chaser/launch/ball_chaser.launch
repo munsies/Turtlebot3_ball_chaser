@@ -1,0 +1,15 @@
+<launch>
+
+ <!-- Drive_robot node -->
+  <node name="drive_robot" type="drive_robot" pkg="turtlebot_ball_chaser" output="screen">
+  </node>
+
+ <!--image_process node -->
+  <node name="image_pub_sub" type="image_pub_sub" pkg="turtlebot_ball_chaser" output="screen">
+  </node> 
+
+ <!-- ball_chase node -->
+  <!--node name="ball_detection" type="ball_detection" pkg="turtlebot_ball_chaser" output="screen">
+  </node-->  
+
+</launch>
