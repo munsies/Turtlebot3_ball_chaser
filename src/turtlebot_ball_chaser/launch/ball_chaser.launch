@@ -5,11 +5,11 @@
   </node>
 
  <!--image_process node -->
-  <node name="image_pub_sub" type="image_pub_sub" pkg="turtlebot_ball_chaser" output="screen">
-  </node> 
+  <!--node name="image_pub_sub" type="image_pub_sub" pkg="turtlebot_ball_chaser" output="screen">
+  </node--> 
 
  <!-- ball_chase node -->
-  <!--node name="ball_detection" type="ball_detection" pkg="turtlebot_ball_chaser" output="screen">
-  </node-->  
+  <node name="ball_detection" type="ball_detection" pkg="turtlebot_ball_chaser" output="screen">
+  </node>  
 
 </launch>

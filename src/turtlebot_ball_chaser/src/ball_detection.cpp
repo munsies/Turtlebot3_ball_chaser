@@ -35,9 +35,9 @@ public:
     :it_(nh_)
   {
     // Subscribe to /camera/rgb/image_raw topic to read the image data inside the process_image_callback function
-    image_sub_ = it_.subscribe("/camera/color/image_raw", 1000,&SubscribeAndPublish::process_image_callback, this);   
+    image_sub_ = it_.subscribe("/camera/color/image_raw", 1,&SubscribeAndPublish::process_image_callback, this);   
     // image_sub_ = it_.subscribe("/camera/color/image_raw", 1,&ImageConverter::imageCallback, this);
-    image_pub_ = it_.advertise("/image_converter/output_video", 1000);
+    image_pub_ = it_.advertise("/image_converter/output_video", 1);
     cv::namedWindow(OPENCV_WINDOW);
   }
 
