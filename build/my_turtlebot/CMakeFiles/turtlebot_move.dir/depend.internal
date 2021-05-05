@@ -73,7 +73,6 @@ my_turtlebot/CMakeFiles/turtlebot_move.dir/src/turtlebot_move.cpp.o
  /opt/ros/kinetic/include/ros/wall_timer.h
  /opt/ros/kinetic/include/ros/wall_timer_options.h
  /opt/ros/kinetic/include/rosconsole/macros_generated.h
- /opt/ros/kinetic/include/std_msgs/Float64.h
  /opt/ros/kinetic/include/std_msgs/Header.h
  /opt/ros/kinetic/include/tf/LinearMath/Matrix3x3.h
  /opt/ros/kinetic/include/tf/LinearMath/MinMax.h

@@ -14,6 +14,12 @@ double x_current, y_current, roll, pitch, yaw;
 
 void poselisten(const nav_msgs::Odometry::ConstPtr & msg);
 
+double mod(double first_term, double second_term)
+{
+    // Compute the modulus
+    return first_term - (second_term)*floor(first_term / (second_term));
+}
+
 int main(int argc, char **argv) {
 
     ros::init(argc, argv, "sensor_listner");
@@ -44,6 +50,7 @@ void poselisten(const nav_msgs::Odometry::ConstPtr & msg) {
     m.getRPY(roll, pitch, yaw);
     ROS_INFO(" current_x : %1.2f", x_current);
     ROS_INFO(" current_y : %1.2f", y_current);
+    yaw = mod(yaw, 2 * M_PI);
     ROS_INFO(" roll : %1.2f", roll);
     ROS_INFO(" pitch : %1.2f", pitch);
     ROS_INFO(" yaw : %1.2f", yaw);

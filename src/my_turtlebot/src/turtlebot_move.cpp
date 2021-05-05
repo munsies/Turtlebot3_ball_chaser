@@ -1,9 +1,9 @@
 #include "ros/ros.h"
 #include "geometry_msgs/Twist.h"
-// #include "geometry_msgs/Point.h"
+#include "geometry_msgs/Point.h"
 #include <tf/transform_datatypes.h>
 #include <nav_msgs/Odometry.h>
-#include <std_msgs/Float64.h>
+//#include <std_msgs/Float64.h>
 #include <math.h>
 
 using namespace std;
@@ -30,8 +30,8 @@ int main(int argc, char **argv) {
     ROS_INFO("****TEST***\n");
     ros::Rate loop_rate(0.5);
 
-    move(0.1,1.0,1);
-    rotate(0.1,1.5707,1);
+    move(0.1,0.5,0);
+    // rotate(0.1,1.5707,1);
 
     ros::spinOnce();
 
@@ -76,7 +76,7 @@ void move(double speed, double distance, bool isForward) {
 
 void rotate(double angular_speed, double abs_angle, bool isClockwise) {
     geometry_msgs::Twist vel_msg;
-    nav_msgs::Odometry msg;
+    // nav_msgs::Odometry msg;
     
     double w0 = 0;
 

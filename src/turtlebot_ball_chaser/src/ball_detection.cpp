@@ -34,9 +34,8 @@ public:
   SubscribeAndPublish()
     :it_(nh_)
   {
-    // Subscribe to /camera/rgb/image_raw topic to read the image data inside the process_image_callback function
+
     image_sub_ = it_.subscribe("/camera/color/image_raw", 1,&SubscribeAndPublish::process_image_callback, this);   
-    // image_sub_ = it_.subscribe("/camera/color/image_raw", 1,&ImageConverter::imageCallback, this);
     image_pub_ = it_.advertise("/image_converter/output_video", 1);
     cv::namedWindow(OPENCV_WINDOW);
   }
@@ -62,7 +61,7 @@ void drive_robot(float lin_x, float ang_z)
     if (!client.call(srv))
         ROS_ERROR("Failed to call service safe_move");
 } 
-
+// find contour
 int getContours(Mat imgDil, Mat img) {
     
     std::vector<std::vector<Point>> contours;
@@ -101,7 +100,7 @@ int getContours(Mat imgDil, Mat img) {
         
     return pix;
 }
-                              
+// find green color ball                              
 int findColor(Mat img) {
     
     Mat imgHSV;
@@ -123,53 +122,7 @@ int findColor(Mat img) {
     
     return pix;
 }
-/*
-int shapeContours(Mat imgDil,Mat img, vector<Rect> colorRect) {
-    
-    std::vector<std::vector<Point>> contours;
-    std::vector<Vec4i> hierarchy;
-    int ball_pixel;
-    for (size_t i = 0; i<colorRect.size(); i++) {
-        if (colorRect[i].x > 50 && colorRect[i].y > 50) {
-            Rect roi(colorRect[i].x,colorRect[i].y,colorRect[i].width,colorRect[i].height);
-            Mat imgCrop = imgDil(roi); 
-            imshow("imageCrop", imgCrop);   
-            findContours(imgCrop, contours, hierarchy, RETR_EXTERNAL,CHAIN_APPROX_SIMPLE);
-//            drawContours(img, contours,-1,Scalar(255,0,255),2);
-            std::vector<std::vector<Point>> conPoly(contours.size()); // corner points
-            std::vector<Rect> boundRect(contours.size());
-            std::string objectType;
-    
-            for (unsigned m = 0; m < contours.size(); m++) {
-                int area = contourArea(contours[m]);
-//              std::cout << area << std::endl; 
-                if (area > 1000) {
-            
-                    float peri = arcLength(contours[m],true);
-                    approxPolyDP(contours[m],conPoly[m],0.02*peri,true);
-//                  drawContours(img, conPoly,m,Scalar(255,0,255),2);
-//                  std::cout<<conPoly[m].size()<<std::endl;
-            
-                    //creating bounding box around shapes
-                    boundRect[m] = boundingRect(conPoly[m]);
-                    int objCor = (int)conPoly[m].size();           
-            
-                    if (objCor > 11)  {
-                    objectType = "Circle";
-            
-                    rectangle(img,colorRect[i].tl()+boundRect[m].tl(),colorRect[i].br(),Scalar(0,0,255),2);
-//                  putText(img,objectType,{boundRect[m].x+5,boundRect[m].y+20},FONT_ITALIC,0.5,Scalar(50,50,50),1);
-            
-                    ball_pixel = colorRect[i].x+colorRect[i].width/2; 
-                    }
-                }
-            }
-        }
-    }
-//    drawContours(img, contours,-1,Scalar(255,0,255),2);
-    return ball_pixel;
-}
-*/
+// Process image
 void process_image_callback(const sensor_msgs::ImageConstPtr& msg)
 {
 

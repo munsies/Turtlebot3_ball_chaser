@@ -1,0 +1,11 @@
+<launch>
+
+ <!-- Drive_robot node -->
+  <node name="drive_robot" type="drive_robot" pkg="turtlebot_ball_chaser" output="screen">
+  </node>
+
+ <!-- ball_chase node -->
+  <node name="line_tracking" type="line_tracking" pkg="turtlebot_ball_chaser" output="screen">
+  </node>  
+
+</launch>

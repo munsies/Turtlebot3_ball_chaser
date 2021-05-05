@@ -242,6 +242,10 @@ add_executable(image_pub_sub src/image_pub_sub.cpp)
 target_link_libraries(image_pub_sub ${catkin_LIBRARIES})
 target_link_libraries(image_pub_sub ${OpenCV_LIBS})
 #OpenCV
+#converting line_tracking
+add_executable(line_tracking src/line_tracking.cpp)
+target_link_libraries(line_tracking ${catkin_LIBRARIES})
+target_link_libraries(line_tracking ${OpenCV_LIBS})
 
 
 #target_link_libraries( ball_detection ${OpenCV_LIBS} )

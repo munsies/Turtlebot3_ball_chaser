@@ -2,16 +2,19 @@ cmake_minimum_required(VERSION 3.0.2)
 project(my_turtlebot)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  message_generation
+  rospy
   roscpp
   std_msgs
-  nav_msgs
+  geometry_msgs
+  message_generation
+ ## nav_msgs
+  turtlebot3_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -205,11 +208,18 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
-add_executable(turtlebot_move src/turtlebot_move.cpp)
-add_dependencies(turtlebot_move nav_msgs_generate_messages_cpp)
-target_link_libraries(turtlebot_move ${catkin_LIBRARIES})
+#add_executable(turtlebot_move src/turtlebot_move.cpp)
+#add_dependencies(turtlebot_move nav_msgs_generate_messages_cpp)
+#target_link_libraries(turtlebot_move ${catkin_LIBRARIES})
 
 add_executable(sensor_listner src/sensor_listner.cpp)
-add_dependencies(sensor_listner nav_msgs_generate_messages_cpp)
+#add_dependencies(sensor_listner nav_msgs_generate_messages_cpp)
 target_link_libraries(sensor_listner ${catkin_LIBRARIES})
 
+add_executable(speed_controller src/controller.cpp)
+#add_dependencies(speed_controller nav_msgs_generate_messages_cpp)
+target_link_libraries(speed_controller ${catkin_LIBRARIES})
+
+add_executable(encoder_listner src/encoder_measurement.cpp)
+#add_dependencies(encoder_listner nav_msgs_generate_messages_cpp)
+target_link_libraries(encoder_listner ${catkin_LIBRARIES})

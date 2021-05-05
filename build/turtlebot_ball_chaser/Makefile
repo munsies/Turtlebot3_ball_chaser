@@ -56,17 +56,15 @@ CMAKE_BINARY_DIR = /home/manan/catkin_ws3/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,38 +76,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -132,6 +98,40 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -164,6 +164,51 @@ preinstall/fast:
 depend:
 	cd /home/manan/catkin_ws3/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_gennodejs.dir/rule:
+	cd /home/manan/catkin_ws3/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_gennodejs.dir/rule
+.PHONY : turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_gennodejs.dir/rule
+
+# Convenience name for target.
+turtlebot_ball_chaser_gennodejs: turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_gennodejs.dir/rule
+
+.PHONY : turtlebot_ball_chaser_gennodejs
+
+# fast build rule for target.
+turtlebot_ball_chaser_gennodejs/fast:
+	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_gennodejs.dir/build.make turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_gennodejs.dir/build
+.PHONY : turtlebot_ball_chaser_gennodejs/fast
+
+# Convenience name for target.
+turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_nodejs.dir/rule:
+	cd /home/manan/catkin_ws3/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_nodejs.dir/rule
+.PHONY : turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+turtlebot_ball_chaser_generate_messages_nodejs: turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_nodejs.dir/rule
+
+.PHONY : turtlebot_ball_chaser_generate_messages_nodejs
+
+# fast build rule for target.
+turtlebot_ball_chaser_generate_messages_nodejs/fast:
+	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_nodejs.dir/build.make turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_nodejs.dir/build
+.PHONY : turtlebot_ball_chaser_generate_messages_nodejs/fast
+
+# Convenience name for target.
+turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_genlisp.dir/rule:
+	cd /home/manan/catkin_ws3/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_genlisp.dir/rule
+.PHONY : turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_genlisp.dir/rule
+
+# Convenience name for target.
+turtlebot_ball_chaser_genlisp: turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_genlisp.dir/rule
+
+.PHONY : turtlebot_ball_chaser_genlisp
+
+# fast build rule for target.
+turtlebot_ball_chaser_genlisp/fast:
+	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_genlisp.dir/build.make turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_genlisp.dir/build
+.PHONY : turtlebot_ball_chaser_genlisp/fast
 
 # Convenience name for target.
 turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_eus.dir/rule:
@@ -211,36 +256,6 @@ drive_robot/fast:
 .PHONY : drive_robot/fast
 
 # Convenience name for target.
-turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_cpp.dir/rule:
-	cd /home/manan/catkin_ws3/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_cpp.dir/rule
-.PHONY : turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-turtlebot_ball_chaser_generate_messages_cpp: turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_cpp.dir/rule
-
-.PHONY : turtlebot_ball_chaser_generate_messages_cpp
-
-# fast build rule for target.
-turtlebot_ball_chaser_generate_messages_cpp/fast:
-	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_cpp.dir/build.make turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_cpp.dir/build
-.PHONY : turtlebot_ball_chaser_generate_messages_cpp/fast
-
-# Convenience name for target.
-turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_gennodejs.dir/rule:
-	cd /home/manan/catkin_ws3/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_gennodejs.dir/rule
-.PHONY : turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_gennodejs.dir/rule
-
-# Convenience name for target.
-turtlebot_ball_chaser_gennodejs: turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_gennodejs.dir/rule
-
-.PHONY : turtlebot_ball_chaser_gennodejs
-
-# fast build rule for target.
-turtlebot_ball_chaser_gennodejs/fast:
-	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_gennodejs.dir/build.make turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_gennodejs.dir/build
-.PHONY : turtlebot_ball_chaser_gennodejs/fast
-
-# Convenience name for target.
 turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages.dir/rule:
 	cd /home/manan/catkin_ws3/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages.dir/rule
 .PHONY : turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages.dir/rule
@@ -271,96 +286,6 @@ turtlebot_ball_chaser_geneus/fast:
 .PHONY : turtlebot_ball_chaser_geneus/fast
 
 # Convenience name for target.
-turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/manan/catkin_ws3/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_genlisp.dir/rule:
-	cd /home/manan/catkin_ws3/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_genlisp.dir/rule
-.PHONY : turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_genlisp.dir/rule
-
-# Convenience name for target.
-turtlebot_ball_chaser_genlisp: turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_genlisp.dir/rule
-
-.PHONY : turtlebot_ball_chaser_genlisp
-
-# fast build rule for target.
-turtlebot_ball_chaser_genlisp/fast:
-	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_genlisp.dir/build.make turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_genlisp.dir/build
-.PHONY : turtlebot_ball_chaser_genlisp/fast
-
-# Convenience name for target.
-turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/manan/catkin_ws3/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_lisp: turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_lisp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/manan/catkin_ws3/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_py: turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_py
-
-# fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/manan/catkin_ws3/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_eus: turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_eus
-
-# fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/manan/catkin_ws3/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-.PHONY : turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_nodejs: turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make turtlebot_ball_chaser/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
 turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_lisp.dir/rule:
 	cd /home/manan/catkin_ws3/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_lisp.dir/rule
 .PHONY : turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_lisp.dir/rule
@@ -374,21 +299,6 @@ turtlebot_ball_chaser_generate_messages_lisp: turtlebot_ball_chaser/CMakeFiles/t
 turtlebot_ball_chaser_generate_messages_lisp/fast:
 	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_lisp.dir/build.make turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_lisp.dir/build
 .PHONY : turtlebot_ball_chaser_generate_messages_lisp/fast
-
-# Convenience name for target.
-turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_nodejs.dir/rule:
-	cd /home/manan/catkin_ws3/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_nodejs.dir/rule
-.PHONY : turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-turtlebot_ball_chaser_generate_messages_nodejs: turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_nodejs.dir/rule
-
-.PHONY : turtlebot_ball_chaser_generate_messages_nodejs
-
-# fast build rule for target.
-turtlebot_ball_chaser_generate_messages_nodejs/fast:
-	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_nodejs.dir/build.make turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_nodejs.dir/build
-.PHONY : turtlebot_ball_chaser_generate_messages_nodejs/fast
 
 # Convenience name for target.
 turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_py.dir/rule:
@@ -451,6 +361,21 @@ image_pub_sub/fast:
 .PHONY : image_pub_sub/fast
 
 # Convenience name for target.
+turtlebot_ball_chaser/CMakeFiles/line_tracking.dir/rule:
+	cd /home/manan/catkin_ws3/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_ball_chaser/CMakeFiles/line_tracking.dir/rule
+.PHONY : turtlebot_ball_chaser/CMakeFiles/line_tracking.dir/rule
+
+# Convenience name for target.
+line_tracking: turtlebot_ball_chaser/CMakeFiles/line_tracking.dir/rule
+
+.PHONY : line_tracking
+
+# fast build rule for target.
+line_tracking/fast:
+	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/line_tracking.dir/build.make turtlebot_ball_chaser/CMakeFiles/line_tracking.dir/build
+.PHONY : line_tracking/fast
+
+# Convenience name for target.
 turtlebot_ball_chaser/CMakeFiles/_turtlebot_ball_chaser_generate_messages_check_deps_DriveToBall.dir/rule:
 	cd /home/manan/catkin_ws3/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_ball_chaser/CMakeFiles/_turtlebot_ball_chaser_generate_messages_check_deps_DriveToBall.dir/rule
 .PHONY : turtlebot_ball_chaser/CMakeFiles/_turtlebot_ball_chaser_generate_messages_check_deps_DriveToBall.dir/rule
@@ -464,6 +389,21 @@ _turtlebot_ball_chaser_generate_messages_check_deps_DriveToBall: turtlebot_ball_
 _turtlebot_ball_chaser_generate_messages_check_deps_DriveToBall/fast:
 	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/_turtlebot_ball_chaser_generate_messages_check_deps_DriveToBall.dir/build.make turtlebot_ball_chaser/CMakeFiles/_turtlebot_ball_chaser_generate_messages_check_deps_DriveToBall.dir/build
 .PHONY : _turtlebot_ball_chaser_generate_messages_check_deps_DriveToBall/fast
+
+# Convenience name for target.
+turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_cpp.dir/rule:
+	cd /home/manan/catkin_ws3/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_cpp.dir/rule
+.PHONY : turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+turtlebot_ball_chaser_generate_messages_cpp: turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_cpp.dir/rule
+
+.PHONY : turtlebot_ball_chaser_generate_messages_cpp
+
+# fast build rule for target.
+turtlebot_ball_chaser_generate_messages_cpp/fast:
+	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_cpp.dir/build.make turtlebot_ball_chaser/CMakeFiles/turtlebot_ball_chaser_generate_messages_cpp.dir/build
+.PHONY : turtlebot_ball_chaser_generate_messages_cpp/fast
 
 src/ball_detection.o: src/ball_detection.cpp.o
 
@@ -546,39 +486,62 @@ src/image_pub_sub.cpp.s:
 	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/image_pub_sub.dir/build.make turtlebot_ball_chaser/CMakeFiles/image_pub_sub.dir/src/image_pub_sub.cpp.s
 .PHONY : src/image_pub_sub.cpp.s
 
+src/line_tracking.o: src/line_tracking.cpp.o
+
+.PHONY : src/line_tracking.o
+
+# target to build an object file
+src/line_tracking.cpp.o:
+	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/line_tracking.dir/build.make turtlebot_ball_chaser/CMakeFiles/line_tracking.dir/src/line_tracking.cpp.o
+.PHONY : src/line_tracking.cpp.o
+
+src/line_tracking.i: src/line_tracking.cpp.i
+
+.PHONY : src/line_tracking.i
+
+# target to preprocess a source file
+src/line_tracking.cpp.i:
+	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/line_tracking.dir/build.make turtlebot_ball_chaser/CMakeFiles/line_tracking.dir/src/line_tracking.cpp.i
+.PHONY : src/line_tracking.cpp.i
+
+src/line_tracking.s: src/line_tracking.cpp.s
+
+.PHONY : src/line_tracking.s
+
+# target to generate assembly for a file
+src/line_tracking.cpp.s:
+	cd /home/manan/catkin_ws3/build && $(MAKE) -f turtlebot_ball_chaser/CMakeFiles/line_tracking.dir/build.make turtlebot_ball_chaser/CMakeFiles/line_tracking.dir/src/line_tracking.cpp.s
+.PHONY : src/line_tracking.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
-	@echo "... rebuild_cache"
-	@echo "... edit_cache"
+	@echo "... list_install_components"
+	@echo "... turtlebot_ball_chaser_gennodejs"
+	@echo "... turtlebot_ball_chaser_generate_messages_nodejs"
+	@echo "... turtlebot_ball_chaser_genlisp"
 	@echo "... turtlebot_ball_chaser_generate_messages_eus"
 	@echo "... turtlebot_ball_chaser_gencpp"
 	@echo "... drive_robot"
-	@echo "... test"
-	@echo "... turtlebot_ball_chaser_generate_messages_cpp"
-	@echo "... turtlebot_ball_chaser_gennodejs"
 	@echo "... turtlebot_ball_chaser_generate_messages"
 	@echo "... turtlebot_ball_chaser_geneus"
-	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... turtlebot_ball_chaser_genlisp"
-	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... list_install_components"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... turtlebot_ball_chaser_generate_messages_lisp"
-	@echo "... turtlebot_ball_chaser_generate_messages_nodejs"
+	@echo "... rebuild_cache"
 	@echo "... turtlebot_ball_chaser_generate_messages_py"
 	@echo "... turtlebot_ball_chaser_genpy"
 	@echo "... install/strip"
 	@echo "... ball_detection"
 	@echo "... image_pub_sub"
+	@echo "... line_tracking"
 	@echo "... _turtlebot_ball_chaser_generate_messages_check_deps_DriveToBall"
 	@echo "... install/local"
+	@echo "... turtlebot_ball_chaser_generate_messages_cpp"
+	@echo "... test"
+	@echo "... edit_cache"
+	@echo "... install"
 	@echo "... src/ball_detection.o"
 	@echo "... src/ball_detection.i"
 	@echo "... src/ball_detection.s"
@@ -588,6 +551,9 @@ help:
 	@echo "... src/image_pub_sub.o"
 	@echo "... src/image_pub_sub.i"
 	@echo "... src/image_pub_sub.s"
+	@echo "... src/line_tracking.o"
+	@echo "... src/line_tracking.i"
+	@echo "... src/line_tracking.s"
 .PHONY : help
 
 

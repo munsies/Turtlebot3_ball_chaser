@@ -21,7 +21,7 @@ bool handle_drive_request(turtlebot_ball_chaser::DriveToBall::Request& req,
     turtlebot_ball_chaser::DriveToBall::Response& res)
 {
 
-    ROS_INFO("DriveToBallRequest received - j1:%1.2f, j2:%1.2f", (float)req.linear_x, (float)req.angular_z);
+  //  ROS_INFO("DriveToBallRequest received - j1:%1.2f, j2:%1.2f", (float)req.linear_x, (float)req.angular_z);
 
     // Create a motor_command object of type geometry_msgs::Twist
     geometry_msgs::Twist motor_command;
@@ -56,7 +56,7 @@ int main(int argc, char **argv)
 
   // Define a command_robt service with a handle_drive_request callback function
   ros::ServiceServer service = SAPObject.n().advertiseService("/turtlebot_ball_chaser/command_robot", &SubscribeAndPublish::handle_drive_request, &SAPObject);
-  ROS_INFO("Ready to send joint commands");
+  // ROS_INFO("Ready to send joint commands");
 
   ros::spin();
 
